@@ -1,0 +1,118 @@
+$lineThickness: 2px;
+$projBtnHeight: 80px;
+$leftExtension: 30px;
+$bpLineEndOffsetX: -8px;
+$headingHeight: 48px;
+$headingBottomMrgn: 100px;
+$headingULineOffset: 10px;
+$bpContainerMarginBttm: 30px;
+
+$bpLineStartY: calc(($projBtnHeight / 2) - ($lineThickness / 2));
+$bpLineStartX: calc($lineThickness - $leftExtension);
+$headingULinePos: calc($headingHeight + $headingULineOffset);
+
+
+.layout-line {
+  background-color: black;
+  position: absolute;
+}
+
+.trans-layout-line {
+    transition: height 0.4s linear, width 0.4s linear, margin 0.4s linear;
+}
+
+.init-layout-line {
+    &.bp-layout-line, &.heading-layout-uLine {
+        width: 0 !important;
+    }
+
+    &.heading-vert-layout-line, &.vert-layout-line {
+        height: 0 !important;
+    }
+
+    &.nav-layout-line {
+        width: 0;
+        margin: 0 50%;
+    }
+}
+
+.heading-layout-uLine {
+  @extend .layout-line;
+  width: calc(100% + $leftExtension);
+  height: $lineThickness;
+  top: $headingULinePos;
+  right: 0;
+}
+
+.heading-vert-layout-line {
+  @extend .layout-line;
+  width: $lineThickness;
+  left: -$leftExtension;
+  top: $headingULinePos + $lineThickness;
+  height: calc($headingBottomMrgn - $headingULineOffset + $bpLineStartY);
+}
+
+.vert-layout-line {
+  @extend .layout-line;
+  width: $lineThickness;
+  height: calc(100% + $bpContainerMarginBttm);
+  top: calc($bpLineStartY + $lineThickness);
+  left: -$leftExtension;
+}
+
+.bp-layout-line {
+  @extend .layout-line;
+  width: calc((-1 * $bpLineStartX) + $bpLineEndOffsetX);
+  height: $lineThickness;
+  top: $bpLineStartY;
+  left: $bpLineStartX;
+
+  &::after {
+    @extend .layout-line;
+    content: "";
+    width: 60%;
+    height: 100%;
+    top: 0;
+    left: 40%;
+    transition: transform 0.4s;
+    border-radius: calc($lineThickness / 2);
+  }
+}
+
+.activated-bp-layout-line::after {
+    transform: rotate(450deg);
+}
+
+.lined-bullet-point {
+  position: relative;
+  height: $projBtnHeight;
+
+  &:hover .bp-layout-line::after {
+    transform: rotate(450deg);
+  }
+
+  &:hover .activated-bp-layout-line::after {
+    transform: rotate(0);
+  }
+}
+
+.bp-heading {
+  position: relative;
+  display: inline-block;
+  height: $headingHeight;
+  margin-bottom: $headingBottomMrgn;
+}
+
+.bp-layout-container {
+  position: relative;
+  margin-bottom: $bpContainerMarginBttm;
+}
+
+.nav-layout-line {
+    @extend .layout-line;
+    bottom: 0;
+    left: 0;
+    height: $lineThickness;
+    width: 100%;
+    margin: 0;
+}

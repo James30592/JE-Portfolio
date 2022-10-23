@@ -1,0 +1,228 @@
+.layout-line, .nav-layout-line, .bp-layout-line::after, .bp-layout-line, .vert-layout-line, .heading-vert-layout-line, .heading-layout-uLine {
+  background-color: black;
+  position: absolute;
+}
+
+.trans-layout-line {
+  transition: height 0.4s linear, width 0.4s linear, margin 0.4s linear;
+}
+
+.init-layout-line.bp-layout-line, .init-layout-line.heading-layout-uLine {
+  width: 0 !important;
+}
+.init-layout-line.heading-vert-layout-line, .init-layout-line.vert-layout-line {
+  height: 0 !important;
+}
+.init-layout-line.nav-layout-line {
+  width: 0;
+  margin: 0 50%;
+}
+
+.heading-layout-uLine {
+  width: calc(100% + 30px);
+  height: 2px;
+  top: 58px;
+  right: 0;
+}
+
+.heading-vert-layout-line {
+  width: 2px;
+  left: -30px;
+  top: 60px;
+  height: 129px;
+}
+
+.vert-layout-line {
+  width: 2px;
+  height: calc(100% + 30px);
+  top: 41px;
+  left: -30px;
+}
+
+.bp-layout-line {
+  width: 20px;
+  height: 2px;
+  top: 39px;
+  left: -28px;
+}
+.bp-layout-line::after {
+  content: "";
+  width: 60%;
+  height: 100%;
+  top: 0;
+  left: 40%;
+  transition: transform 0.4s;
+  border-radius: 1px;
+}
+
+.activated-bp-layout-line::after {
+  transform: rotate(450deg);
+}
+
+.lined-bullet-point {
+  position: relative;
+  height: 80px;
+}
+.lined-bullet-point:hover .bp-layout-line::after {
+  transform: rotate(450deg);
+}
+.lined-bullet-point:hover .activated-bp-layout-line::after {
+  transform: rotate(0);
+}
+
+.bp-heading {
+  position: relative;
+  display: inline-block;
+  height: 48px;
+  margin-bottom: 100px;
+}
+
+.bp-layout-container {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.nav-layout-line {
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  margin: 0;
+}
+
+nav {
+  width: 100%;
+}
+
+.navbar-collapse {
+  text-align: end;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    width: 2px;
+    height: 0px;
+    bottom: -9px;
+    left: 50%;
+    transition: height 0.15s linear;
+  }
+  .nav-link:hover::after {
+    height: 16px;
+  }
+}
+.project-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: rgb(255, 89, 77);
+  font-size: 1.3rem;
+  transition: padding 0.3s, opacity 0.5s, color 0.15s linear;
+}
+.project-btn:hover {
+  padding-left: 5px;
+}
+.project-btn.collapsed {
+  color: black;
+}
+
+.project-title {
+  font-size: 2rem;
+}
+
+.project-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.project-info p {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+.project-info-content {
+  margin-left: 150px;
+}
+
+.project-info-sect {
+  padding: 1.5rem 0;
+}
+.project-info-sect h3 {
+  font-family: "Cagliostro", sans-serif;
+}
+
+.link-tip {
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+@keyframes bg-scrolling {
+  100% {
+    background-position: -480px 105px;
+  }
+}
+.scrolling-bg, body::before {
+  background-color: white;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23000000' fill-opacity='0.02'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: bg-scrolling 30s infinite;
+  animation-timing-function: linear;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+* {
+  transition: opacity 0.5s;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  padding-top: 58px;
+  overflow-y: scroll;
+}
+
+.transparent, .fade-in-load {
+  opacity: 0;
+}
+
+.page-content {
+  position: relative;
+  width: 40%;
+  margin: 200px auto auto auto;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 170px 170px rgba(255, 255, 255, 0.5);
+}
+
+.page-heading {
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 1023px) {
+  .page-content {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .page-content {
+    width: 80%;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

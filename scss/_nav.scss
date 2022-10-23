@@ -1,0 +1,44 @@
+@use "layoutLines" as layoutLines;
+
+
+
+// Nav
+nav {
+  width: 100%;
+}
+  
+.navbar-collapse {
+  text-align: end;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-link {
+    position: relative;
+  
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: black;
+      width: layoutLines.$lineThickness;
+      height: 0px;
+      bottom: -9px;
+      left: 50%;
+      transition: height 0.15s linear;
+    }
+  
+    &:hover {
+      &::after {
+        height: 16px;
+      }
+    }
+  }
+}
