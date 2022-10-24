@@ -1,0 +1,11 @@
+@use "layoutLines" as layoutLines;
+
+
+
+.contact-icon {
+    font-size: 2rem;
+
+    &:hover {
+        color: layoutLines.$activatedBPColor;
+    }
+}

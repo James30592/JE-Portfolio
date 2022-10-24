@@ -6,6 +6,7 @@ $headingHeight: 48px;
 $headingBottomMrgn: 100px;
 $headingULineOffset: 10px;
 $bpContainerMarginBttm: 30px;
+$activatedBPColor: rgb(255, 89, 77);
 
 $bpLineStartY: calc(($projBtnHeight / 2) - ($lineThickness / 2));
 $bpLineStartX: calc($lineThickness - $leftExtension);
@@ -83,9 +84,29 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
     transform: rotate(450deg);
 }
 
-.lined-bullet-point {
+.non-interact-lined-bp {
   position: relative;
   height: $projBtnHeight;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.3rem;
+  display: inline-flex;
+  align-items: center;
+
+  &.collapsed {
+    color: black;
+  }
+}
+
+.lined-bullet-point {
+  @extend .non-interact-lined-bp;
+  color: $activatedBPColor;
+  transition: padding 0.3s, opacity 0.5s, color 0.15s linear;
+
+  &:hover {
+    padding-left: 5px;
+  }
 
   &:hover .bp-layout-line::after {
     transform: rotate(450deg);
@@ -94,6 +115,10 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
   &:hover .activated-bp-layout-line::after {
     transform: rotate(0);
   }
+}
+
+.bp-content {
+  margin-left: 150px;
 }
 
 .bp-heading {
@@ -106,6 +131,11 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
 .bp-layout-container {
   position: relative;
   margin-bottom: $bpContainerMarginBttm;
+  
+  p {
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+  }
 }
 
 .nav-layout-line {

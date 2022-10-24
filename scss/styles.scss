@@ -2,6 +2,7 @@
 @use "nav";
 @use "projects";
 @use "background";
+@use "contact";
 
 
 
@@ -12,7 +13,7 @@
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
-  padding-top: 58px;
+  padding-top: 63px;
   overflow-y: scroll;
 }
 
