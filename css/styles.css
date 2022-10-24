@@ -76,6 +76,7 @@
 .lined-bullet-point {
   color: rgb(255, 89, 77);
   transition: padding 0.3s, opacity 0.5s, color 0.15s linear;
+  text-align: start;
 }
 .lined-bullet-point:hover {
   padding-left: 5px;
@@ -88,7 +89,7 @@
 }
 
 .bp-content {
-  margin-left: 150px;
+  margin-left: 15%;
 }
 
 .bp-heading {
@@ -115,6 +116,11 @@
   margin: 0;
 }
 
+@media only screen and (max-width: 768px) {
+  .bp-content {
+    margin-left: 0;
+  }
+}
 nav {
   width: 100%;
 }
@@ -193,7 +199,8 @@ body::before {
 
 @media only screen and (max-width: 768px) {
   .scrolling-bg, body::before {
-    animation: bg-scrolling 50s infinite;
+    animation: bg-scrolling 60s infinite;
+    animation-timing-function: linear;
   }
 }
 .contact-icon {
@@ -220,7 +227,7 @@ body {
 .page-content {
   position: relative;
   width: 40%;
-  margin: 200px auto auto auto;
+  margin: 15vh auto;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 170px 170px rgba(255, 255, 255, 0.5);
 }
@@ -236,7 +243,7 @@ body {
 }
 @media only screen and (max-width: 768px) {
   .page-content {
-    width: 80%;
+    width: 70%;
   }
 }
 

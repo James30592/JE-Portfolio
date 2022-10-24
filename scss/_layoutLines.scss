@@ -103,6 +103,7 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
   @extend .non-interact-lined-bp;
   color: $activatedBPColor;
   transition: padding 0.3s, opacity 0.5s, color 0.15s linear;
+  text-align: start;
 
   &:hover {
     padding-left: 5px;
@@ -118,7 +119,7 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
 }
 
 .bp-content {
-  margin-left: 150px;
+  margin-left: 15%;
 }
 
 .bp-heading {
@@ -145,4 +146,10 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
     height: $lineThickness;
     width: 100%;
     margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .bp-content {
+    margin-left: 0;
+  }
 }

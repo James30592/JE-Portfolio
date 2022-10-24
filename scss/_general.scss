@@ -1,0 +1,51 @@
+@use "vars" as vars;
+
+
+
+// General
+* {
+    transition: opacity 0.5s;
+  }
+  
+  body {
+    font-family: 'Source Sans Pro', sans-serif;
+    padding-top: 63px;
+    overflow-y: scroll;
+  }
+  
+  .transparent {
+    opacity: 0;
+  }
+  
+  .fade-in-load {
+    @extend .transparent;
+  }
+    
+  .page-content {
+    $bgColor: rgba(255,255,255,0.5);
+    $shadowOffset: 170px;
+  
+    position: relative;
+    width: 40%;
+    margin: 15vh auto;
+    background-color: $bgColor;
+    box-shadow: 0 0 $shadowOffset $shadowOffset $bgColor;
+  }
+  
+  .page-heading {
+    font-weight: 700;
+  }
+  
+  
+  // Media queries.
+  @media only screen and (max-width: vars.$tbltBreakPt) {
+    .page-content {
+      width: 60%;
+    }
+  }
+  
+  @media only screen and (max-width: vars.$mblBreakPt) {
+    .page-content {
+      width: 70%;
+    }
+  }

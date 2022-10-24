@@ -1,4 +1,6 @@
 @use "nav" as nav;
+@use "vars" as vars;
+
 
 
 
@@ -26,8 +28,9 @@ body::before {
   @extend .scrolling-bg;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: vars.$mblBreakPt) {
   .scrolling-bg {
-    animation: bg-scrolling 50s infinite;
+    animation: bg-scrolling 60s infinite;
+    animation-timing-function: linear;
   }
 }
