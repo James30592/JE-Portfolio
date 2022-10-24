@@ -25,3 +25,9 @@ body::before {
   height: 100%;
   @extend .scrolling-bg;
 }
+
+@media only screen and (max-width: 768px) {
+  .scrolling-bg {
+    animation: bg-scrolling 50s infinite;
+  }
+}

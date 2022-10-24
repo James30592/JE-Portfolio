@@ -191,6 +191,11 @@ body::before {
   height: 100%;
 }
 
+@media only screen and (max-width: 768px) {
+  .scrolling-bg, body::before {
+    animation: bg-scrolling 50s infinite;
+  }
+}
 .contact-icon {
   font-size: 2rem;
 }
