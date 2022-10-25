@@ -1,14 +1,9 @@
-// import { toggleClass } from "./utils.js";
-
-
-
 initBpAnims();
-drawLayoutLinesOnLoad();
 fadeInElemsOnLoad();
+drawLayoutLinesOnLoad();
 
 
-
-
+// -------------------Bullet point animations----------------------------------
 function initBpAnims() {
   const bps = Array.from(document.querySelectorAll(".lined-bullet-point"));
   const bpsWithLines = getBpsWithLines(bps);
@@ -51,9 +46,7 @@ function addBpBtnEventListeners(bpsWithLines) {
 }
 
 
-
-
-
+// -------------------Bullet point layout lines drawing-------------------------
 function drawLayoutLinesOnLoad() {
   const allLines = Array.from(document.querySelectorAll(".init-layout-line"));
   
@@ -81,13 +74,7 @@ async function drawLayoutLines(maxDrawIdx, allLines) {
 }
 
 
-
-
-
-
-
-
-
+// -------------------Fade in elements on load---------------------------------
 const FADE_TIME_OFFSET = 100;
 
 function fadeInElemsOnLoad() {
@@ -105,17 +92,31 @@ function fadeInElems(elems) {
 }
 
 
+// ----------------------Contacts page, show email------------------------------
+// To run page specific JS.
+var currPage = document.querySelector("body").dataset.scripts;
+
+if (currPage === "contact") {
+  const showEmailBtn = document.querySelector(".show-email-btn");
+  const emailLink = document.querySelector(".email-address");
+
+  // Keep email hidden from scrapers.
+  const mailToParts = ["ma", "ilt", "o:"];
+  const emlParts = ["james_ev", "erett", "@l", "ive.c", "om"];
+
+  showEmailBtn.addEventListener("click", showEmail, {once: true});
+
+  function showEmail() {
+    const mailTo = mailToParts.join("");
+    const emlAddress = emlParts.join("");
+
+    emailLink.innerHTML = emlAddress;
+    emailLink.setAttribute("href", mailTo + emlAddress);
+  }
+}
 
 
-
-
-
-
-
-
-
-
-
+// -------------------Utility functions----------------------------------------
 // Returns a promise that resolves when transition on given element ends, 
 // optional transition property name check.
 function awaitTransition(elem, propName = null) {
@@ -148,42 +149,4 @@ function toggleClass(elem, clss) {
   else {
     elem.classList.add(clss);
   };
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// To run page specific JS.
-var currPage = document.querySelector("body").dataset.scripts;
-
-
-
-if (currPage === "contact") {
-  const showEmailBtn = document.querySelector(".show-email-btn");
-  const emailLink = document.querySelector(".email-address");
-
-  // Keep email hidden from scrapers.
-  const mailToParts = ["ma", "ilt", "o:"];
-  const emlParts = ["james_ev", "erett", "@l", "ive.c", "om"];
-
-  showEmailBtn.addEventListener("click", showEmail, {once: true});
-
-  function showEmail() {
-    const mailTo = mailToParts.join("");
-    const emlAddress = emlParts.join("");
-
-    emailLink.innerHTML = emlAddress;
-    emailLink.setAttribute("href", mailTo + emlAddress);
-  }
 }

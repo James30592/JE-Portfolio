@@ -78,14 +78,16 @@
   transition: padding 0.3s, opacity 0.5s, color 0.15s linear;
   text-align: start;
 }
-.lined-bullet-point:hover {
-  padding-left: 5px;
-}
-.lined-bullet-point:hover .bp-layout-line::after {
-  transform: rotate(450deg);
-}
-.lined-bullet-point:hover .activated-bp-layout-line::after {
-  transform: rotate(0);
+@media (pointer: fine) {
+  .lined-bullet-point:hover {
+    padding-left: 5px;
+  }
+  .lined-bullet-point:hover .bp-layout-line::after {
+    transform: rotate(450deg);
+  }
+  .lined-bullet-point:hover .activated-bp-layout-line::after {
+    transform: rotate(0);
+  }
 }
 
 .bp-content {
@@ -118,7 +120,7 @@
 
 @media only screen and (max-width: 768px) {
   .bp-content {
-    margin-left: 0;
+    margin-left: 20px;
   }
 }
 nav {

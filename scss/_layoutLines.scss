@@ -1,3 +1,7 @@
+@use "vars" as vars;
+
+
+
 $lineThickness: 2px;
 $projBtnHeight: 80px;
 $leftExtension: 30px;
@@ -105,16 +109,18 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
   transition: padding 0.3s, opacity 0.5s, color 0.15s linear;
   text-align: start;
 
-  &:hover {
-    padding-left: 5px;
-  }
+  @media (pointer: fine) {
+    &:hover {
+      padding-left: 5px;
+    }
 
-  &:hover .bp-layout-line::after {
-    transform: rotate(450deg);
-  }
+    &:hover .bp-layout-line::after {
+      transform: rotate(450deg);
+    }
 
-  &:hover .activated-bp-layout-line::after {
-    transform: rotate(0);
+    &:hover .activated-bp-layout-line::after {
+      transform: rotate(0);
+    }
   }
 }
 
@@ -148,8 +154,8 @@ $headingULinePos: calc($headingHeight + $headingULineOffset);
     margin: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: vars.$mblBreakPt) {
   .bp-content {
-    margin-left: 0;
+    margin-left: 20px;
   }
 }
