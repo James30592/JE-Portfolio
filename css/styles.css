@@ -162,21 +162,34 @@ nav {
   font-size: 2rem;
 }
 
-.project-info h3 {
-  font-size: 1rem;
-  font-weight: 700;
-}
-
 .project-info-sect {
   padding: 1.5rem 0;
 }
 .project-info-sect h3 {
+  font-size: 1rem;
+  font-weight: 700;
   font-family: "Cagliostro", sans-serif;
+}
+.project-info-sect h4 {
+  font-size: 0.8rem;
+  font-weight: 700;
 }
 
 .link-tip {
   font-size: 0.8rem;
-  margin-left: 1rem;
+}
+
+.test-login-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.test-login-details {
+  color: navy;
+}
+
+.project-improvs > li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 @keyframes bg-scrolling {
@@ -220,6 +233,11 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   padding-top: 63px;
   overflow-y: scroll;
+  cursor: url("../images/cursors/auto.svg"), auto;
+}
+
+button, a {
+  cursor: url("../images/cursors/pointer.svg"), pointer !important;
 }
 
 .transparent, .fade-in-load {

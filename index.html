@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700;900&family=Cagliostro&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/f49e2339de.js" crossorigin="anonymous"></script>
+    <script defer src="https://kit.fontawesome.com/f49e2339de.js" crossorigin="anonymous"></script>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -27,7 +27,7 @@
   <body>
     <div class="bg-div"></div>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-darkk fixed-top scrolling-bg fade-in-load">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top scrolling-bg fade-in-load">
       <div class="container-fluid">
         <h1 class="navbar-brand">James Everett</h1>
 
@@ -71,16 +71,28 @@
             <div class="project-info-sect">
               <h3>Links</h3>
               <p>
-                <a href="https://kindrd.herokuapp.com">
+                <a class="link-w-info" href="https://kindrd.herokuapp.com">
                   https://kindrd.herokuapp.com
                 </a>
-                <span class="link-tip">Please be patient on first click (hosted using free plan, server takes a short while to respond).</span>
+                <br>
+                <span class="link-tip">Please be patient on first click (hosted using free plan, server goes to sleep when inactive and takes a short while to respond).</span>
               </p>
               <p>
                 <a href="https://github.com/James30592/Kindred">
                   Github
                 </a>
               </p>
+            </div>
+            
+            <div class="project-info-sect">
+              <h3>Login</h3>
+              <p>If you don't want to create an account, you can test the app using the following details:</p>
+              <div class="test-login-container">
+                <h4>Email</h4>
+                <p class="test-login-details">test@kindred.com</p>
+                <h4>Password:</h4>
+                <p class="test-login-details">test</p>
+              </div>
             </div>
             
             <div class="project-info-sect">
@@ -97,13 +109,26 @@
                 <li>EJS</li>
                 <li>Sass</li>
                 <li>JS</li>
+                <li>Git</li>
                 <li>Webpack</li>
               </ul>
             </div>
 
             <div class="project-info-sect">
-              <h3>Blog</h3>
-              <p>This was a really fun project...</p>
+              <h3>Description</h3>
+              <p>This project was something I came up with to put into practice what I’d learned about the back and the front end in an idea of my own. The app is functional now although it still needs further tweaks, improvements and features that I’ll mention below. Throughout making this web application I learned a huge amount, especially my familiarity with JS (the front end uses vanilla JS and the back end uses Node.js) and improving my understanding of how various web technologies work in practice.</p>
+              <p>Early on in the project I learned hands-on about how to improve my database schema design. My first effort used too many levels of nesting in embedded objects and was inefficient when queried. I remade my early version of the app with a new schema design involving less embedding, replace with more linked collections and some denormalization, that allowed for more efficient processing on the back end.</p>
+              <p>I spent some time optimising the questions part of the site by having the data for newly answered questions of a user be kept locally on the client and shared between the different questions modes on the page. The user’s answers data is then only POSTed to the server and subsequently saved in the database every set period of time, or when the page is navigated away from, to reduce the number of requests to the server. On the back end, the server keeps track of users currently in a session answering questions, and for which category, to reduce the number of queries on the database.</p>
+              <p>The app uses multiple third-party APIs to provide the questions for most of the categories, although the app is also flexible in allowing categories to use questions I manually provide in the database (or a mix of both; eg. database for the suggestions mode and then an API for the search mode, such is the case with the Books category). The app also uses Google OAuth 2.0, the Google places API (for retrieving user locations at registration) and Passport for user sessions.</p>
+              <p>Once I was largely happy with this project I did some work on optimising the front end using Google Lighthouse. All pages now score 90+ for each Lighthouse metric (nearly all pages score 100 for all metrics except performance). In addition to the performance optimisations I’ve already made, such as: bundling JS, asynchronously loading certain assets, and adjusting my code to only lazy-load images that don’t form part of the first contentful paint of a page, among other things - I know that there are further performance improvements I can still make, such as inlining the critical CSS of each page.</p>
+              <p>Although the app functions, there are features and improvements I plan to work on (some of which are essential and I simply haven’t gotten round to yet), such as:</p>
+              <ul class="project-improvs">
+                <li>Account features (allowing user to change their password and other account details) as well as account email verification on signup.</li>
+                <li>Sanitising user input on the Questions, Find Kindred and Recommendations pages.</li>
+                <li>Optimising the back end for the Find Kindred and Recommendations routes.</li>
+                <li>Further front end optimisation.</li>
+              </ul>
+              <p>Please note that if you do test the app, the recommendations etc. that it generates for you will not be of any real relevance, as most of the data currently in the app is for bot accounts with randomly generated answer data.</p>
             </div>
           </div>
         </div>
@@ -138,7 +163,12 @@
             
             <div class="project-info-sect">
               <h3>Tech used</h3>
-              <p>HTML, CSS, JS.</p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+                <li>Git</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -173,7 +203,12 @@
 
             <div class="project-info-sect">
               <h3>Tech used</h3>
-              <p>HTML, CSS, JS.</p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JS</li>
+                <li>Git</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -208,7 +243,11 @@
 
             <div class="project-info-sect">
               <h3>Tech used</h3>
-              <p>HTML, CSS, jQuery.</p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>jQuery</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -241,7 +280,10 @@
 
             <div class="project-info-sect">
               <h3>Tech used</h3>
-              <p>HTML, CSS.</p>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
             </div>
           </div>
         </div>
