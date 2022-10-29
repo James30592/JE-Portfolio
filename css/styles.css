@@ -150,12 +150,12 @@ nav {
     background-color: black;
     width: 2px;
     height: 0px;
-    bottom: -9px;
+    bottom: -11px;
     left: 50%;
     transition: height 0.15s linear;
   }
   .nav-link:hover::after {
-    height: 16px;
+    height: 18px;
   }
 }
 .project-title {

@@ -33,14 +33,14 @@ nav {
       background-color: black;
       width: layoutLines.$lineThickness;
       height: 0px;
-      bottom: -9px;
+      bottom: -11px;
       left: 50%;
       transition: height 0.15s linear;
     }
   
     &:hover {
       &::after {
-        height: 16px;
+        height: 18px;
       }
     }
   }
